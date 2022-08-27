@@ -16,3 +16,20 @@ code {
 
 /* END not mine */
 
+/* CSS reset */ 
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-width: 325px;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh 100vh 100vh 100vh;
+}

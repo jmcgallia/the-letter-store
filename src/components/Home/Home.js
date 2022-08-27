@@ -1,0 +1,42 @@
+import HomeCSS from "./Home.module.css";
+import NavbarCSS from "../NavBar/NavBar.module.css";
+
+
+function Home() {
+
+  // We want the navbar static in the shop but fixed on the homepage
+  let navBar = document.querySelector(`.${NavbarCSS.sitenav}`);
+  navBar.style.position = "fixed";
+
+  return (
+    <div className={HomeCSS.homeContainer}>
+    <div className={HomeCSS.home}>
+      <div className={`${HomeCSS.page} ${HomeCSS.page1}`}>
+        <div className={HomeCSS.content}>
+          <h1>Send an unforgettable letter.</h1>
+          <p>
+            With the click of a button, you can send anyone in the world their favorite letter.
+          </p>
+          <div className={HomeCSS.preview}><div></div></div>
+         
+          <button>Make someone's day!</button>
+          
+          
+        
+        </div>
+      </div>
+      <div className={`${HomeCSS.page} ${HomeCSS.page2}`}>
+        <h1>This is page 2</h1>
+      </div>
+      <div className={`${HomeCSS.page} ${HomeCSS.page3}`}>
+        <h1>This is page 3</h1>
+      </div>
+      <div className={`${HomeCSS.page} ${HomeCSS.page4}`}>
+        <h1>This is page 4</h1>
+      </div>
+    </div>
+    </div>
+  )
+}
+
+export default Home;
