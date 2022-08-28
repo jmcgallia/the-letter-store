@@ -1,15 +1,18 @@
 import HomeCSS from "./Home.module.css";
 import NavbarCSS from "../NavBar/NavBar.module.css";
+import { useEffect } from "react";
 
 
 function Home() {
 
   // We want the navbar static in the shop but fixed on the homepage
-  let navBar = document.querySelector(`.${NavbarCSS.sitenav}`);
-  navBar.style.position = "fixed";
+  useEffect(() => {
+    let navBar = document.querySelector(`.${NavbarCSS.sitenav}`);
+    navBar.style.position = "fixed";
+  },[])
 
   return (
-    <div className={HomeCSS.homeContainer}>
+   
     <div className={HomeCSS.home}>
       <div className={`${HomeCSS.page} ${HomeCSS.page1}`}>
         <div className={HomeCSS.content}>
@@ -35,7 +38,7 @@ function Home() {
         <h1>This is page 4</h1>
       </div>
     </div>
-    </div>
+  
   )
 }
 

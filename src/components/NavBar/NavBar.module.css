@@ -11,6 +11,7 @@
   text-align: center;
 }
 
+
 .sitenav h1 {
   grid-column: 1 / 2;
   font-size: 32px;
@@ -43,3 +44,4 @@
     display: none;
   }
 }
+

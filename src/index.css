@@ -27,9 +27,3 @@ code {
 body, html {
   min-width: 325px;
 }
-
-.App {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100vh 100vh 100vh 100vh;
-}

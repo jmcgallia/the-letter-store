@@ -1,6 +1,8 @@
 .shop {
   background-color: rgb(110, 190, 190);
-  padding-top: 7vh;
-  min-height: 100vh;
-
+  min-height: 93vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr;
 }
+

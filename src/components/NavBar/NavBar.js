@@ -4,7 +4,10 @@ import Shop from "../Shop/Shop"
 import {Link} from "react-router-dom"
 
 
-function NavBar() {
+function NavBar(props) {
+
+
+
   return (
     <nav className={NavBarCSS.sitenav}>
       <h1>The Letter Store</h1>

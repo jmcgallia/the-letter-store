@@ -2,14 +2,10 @@
   border: 1px solid red;
 }*/
 
-.homeContainer {
+.home {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100vh 100vh 100vh 100vh;
-}
-
-.home {
-
 }
 
 .page {
