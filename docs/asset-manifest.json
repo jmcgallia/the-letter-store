@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/the-letter-store/static/css/main.3b530f1e.css",
+    "main.js": "/the-letter-store/static/js/main.60a4e8fa.js",
+    "static/media/phonegirl2.jpg": "/the-letter-store/static/media/phonegirl2.710d0a48f112645f369e.jpg",
+    "static/media/phonegirl.jpg": "/the-letter-store/static/media/phonegirl.cbace549ebec392a2efb.jpg",
+    "index.html": "/the-letter-store/index.html",
+    "main.3b530f1e.css.map": "/the-letter-store/static/css/main.3b530f1e.css.map",
+    "main.60a4e8fa.js.map": "/the-letter-store/static/js/main.60a4e8fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b530f1e.css",
+    "static/js/main.60a4e8fa.js"
+  ]
+}

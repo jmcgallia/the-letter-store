@@ -1,5 +1,6 @@
 {
-  "name": "aloha-shirt-shack",
+  "homepage": "http://jordan-mcgalliard.github.io/the-letter-store/",
+  "name": "the-letter-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

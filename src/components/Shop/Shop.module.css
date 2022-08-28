@@ -18,6 +18,6 @@
 .shop .displayDiv {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-rows: min-content;
+  grid-template-rows: 30vh;
   gap: 15px;
 }
