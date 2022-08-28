@@ -1,8 +1,23 @@
 .shop {
   background-color: rgb(110, 190, 190);
   min-height: 93vh;
+  padding: 15px;
   display: grid;
   grid-template-rows: min-content 1fr;
   grid-template-columns: 1fr;
 }
 
+.shop header h1 {
+  font-size: 42px;
+}
+
+.shop header p {
+  font-size: 26px;
+}
+
+.shop .displayDiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: min-content;
+  gap: 15px;
+}

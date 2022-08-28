@@ -2,13 +2,13 @@ import shopCSS from "./Shop.module.css";
 import NavbarCSS from "../NavBar/NavBar.module.css";
 import { useEffect } from "react";
 import NavBar from "../NavBar/NavBar"
+import Letter from "../Letter/Letter"
 
 function Shop() {
 
   // We want the navbar to take space but stay on the top in the shop page
   // But take no space in the homepage
   useEffect(() => {
-
 
 
     // When the window resizes, we need to make sure the menu didn't go over
@@ -20,13 +20,31 @@ function Shop() {
     navBar.style.top = "0px";
 
     let handleResize = () => {
-      shop.style.paddingTop = `${navBar.offsetHeight}px`;
+      shop.style.paddingTop = `${navBar.offsetHeight+15}px`;
     }
     
+    // Run handleResize() one time to make the padding work 
+    // before there has been a resize on the first rendering
+    handleResize();
     window.addEventListener('resize', handleResize);
 
   },[])
 
+  let getItems = function() {
+
+    let letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    let items = [];
+
+    for (let letter of letters) {
+      items.push(<Letter let={letter}/>)
+    }
+
+    return (
+      <>
+        {items}
+      </>
+    )
+  }
 
   
   return (
@@ -34,9 +52,10 @@ function Shop() {
     <div className={shopCSS.shop}>
       <header>
         <h1>Browse our letters!</h1>
+        <p>We know you'll love them.</p>
       </header>
-      <div>
-
+      <div className={shopCSS.displayDiv}>
+        {getItems()}
       </div>
     </div>
   )
