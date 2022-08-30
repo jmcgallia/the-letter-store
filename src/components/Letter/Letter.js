@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import letterCSS from "./Letter.module.css"
 
@@ -12,7 +12,7 @@ function Letter(props) {
   // And also deals with changing the colors with the inputs
   useEffect(() => {
 
-
+    /**** Letter resizing stuff here  ****/
 
     // Get all imageArea, which is where the letter is displayed
     let imageArea = Array.from(document.querySelectorAll(`.${letterCSS.imageArea}`));
@@ -32,7 +32,36 @@ function Letter(props) {
     // Run this one time on first render as well.
     handleResize();
     window.addEventListener('resize', handleResize);
+
+
+
   },[])
+
+
+
+  let onBackgroundColorChange = function(event) {
+    let background = event.target.parentElement.parentElement.parentElement.firstChild;
+    background.style.backgroundColor = event.target.value;
+
+    // Must take the # off the beginning of the color because react router doesn't like it
+    setBackGroundColor(backgroundColorRef.current.value.substring(1));
+  }
+
+  let onLetterColorChange = function(event) {
+    let background = event.target.parentElement.parentElement.parentElement.firstChild;
+    background.style.color = event.target.value;
+    // Must take the # off the beginning of the color because react router doesn't like it
+    setLetterColor(letterColorRef.current.value.substring(1));
+
+  }
+
+  const [backgroundColor, setBackGroundColor] = useState();
+  const [letterColor, setLetterColor] = useState();
+
+  let backgroundColorRef = useRef('aaa');
+  let letterColorRef = useRef('aaaaaa');
+
+
 
   return (
     
@@ -42,12 +71,12 @@ function Letter(props) {
             {props.let}
           </div>
           <div className={letterCSS.titleArea}>
-            <Link to={`../letter/${props.let}`}>
+            <Link to={`../letter/${props.let}-${backgroundColor}-${letterColor}`}>
               <p>The letter {props.let}</p>
             </Link>
             <div className={letterCSS.colorInputs}>
-              <input type="color"></input>
-              <input type="color"></input>
+              <input type="color" onChange={onBackgroundColorChange} ref={backgroundColorRef}></input>
+              <input type="color" onChange={onLetterColorChange} ref={letterColorRef}></input>
             </div>
             <button>+</button>
           </div>

@@ -1,0 +1,14 @@
+.letterPage {
+  background-color: rgb(110, 190, 190);
+  min-height: 93vh;
+  padding: 15px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: 400px;
+}
+
+.letterContainer {
+  
+}
