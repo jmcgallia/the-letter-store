@@ -42,6 +42,7 @@ function Letter(props) {
   let onBackgroundColorChange = function(event) {
     let background = event.target.parentElement.parentElement.parentElement.firstChild;
     background.style.backgroundColor = event.target.value;
+    console.log("this happens")
 
     // Must take the # off the beginning of the color because react router doesn't like it
     setBackGroundColor(backgroundColorRef.current.value.substring(1));

@@ -9,6 +9,15 @@
   grid-template-columns: 400px;
 }
 
-.letterContainer {
-  
+@media only screen and (max-width: 500px) {
+    .letterPage {
+      grid-template-columns: 350px;
+    }
 }
+
+@media only screen and (max-width: 400px) {
+  .letterPage {
+    grid-template-columns: 300px;
+  }
+}
+
