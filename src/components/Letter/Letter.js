@@ -5,6 +5,7 @@ import letterCSS from "./Letter.module.css"
 function Letter(props) {
 
   let params = useParams();
+  let thisCard = useRef();
 
   // This useEffect makes the sizes of all letters in their display boxes
   // Based on the size of that box
@@ -33,10 +34,16 @@ function Letter(props) {
     window.addEventListener('resize', handleResize);
 
 
+    // Set the background & Color of the letter based on props.
+    let colorInputs = thisCard.current.querySelector(`.${letterCSS.colorInputs}`);
+    // Later, if color undefined, we'll put a random color here.
+    colorInputs.firstChild.value = props.colorInputOne;
+    colorInputs.lastChild.value = props.colorInputTwo;
+
 
   },[])
 
-
+  
 
   let onBackgroundColorChange = function(event) {
     let background = event.target.parentElement.parentElement.parentElement.firstChild;
@@ -61,11 +68,20 @@ function Letter(props) {
   let backgroundColorRef = useRef('aaa');
   let letterColorRef = useRef('aaaaaa');
 
+  // Args: letter, quantity, colorOne, colorTwo
+  let addToCart = function(event) {
+    let colorInputs = event.target.parentElement.querySelector(`.${letterCSS.colorInputs}`);
+    let colorInputOne = colorInputs.firstChild.value;
+    let colorInputTwo = colorInputs.lastChild.value
+   
+    // params: letter, quantity, colorOne, colorTwo
+    props.updateCart(props.let, 1, colorInputOne, colorInputTwo);
 
+  }
 
   return (
     
-      <div className={letterCSS.letterCard}>
+      <div className={letterCSS.letterCard} ref={thisCard}>
         <div className={letterCSS.letterContent}>
           <div className={letterCSS.imageArea}>
             {props.let}
@@ -78,7 +94,7 @@ function Letter(props) {
               <input type="color" onChange={onBackgroundColorChange} ref={backgroundColorRef}></input>
               <input type="color" onChange={onLetterColorChange} ref={letterColorRef}></input>
             </div>
-            <button>+</button>
+            <button onClick={addToCart}>+</button>
           </div>
         </div>
       </div>

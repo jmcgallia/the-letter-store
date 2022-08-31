@@ -73,12 +73,12 @@ function NavBar(props) {
       <ul className={NavBarCSS.browser}>
         <li onClick={onLinkClick}><Link to="/home">Home</Link></li>
         <li onClick={onLinkClick}><Link to="/shop">Shop</Link></li>
-        <li><Link to="/shop">Cart</Link></li>
+        <li onClick={onLinkClick}><Link to="/cart">Cart</Link></li>
       </ul>
       <ul className={NavBarCSS.mobile}>
         <li onClick={onLinkClick}><Link to="/home">Home</Link></li>
         <li onClick={onLinkClick}><Link to="/shop">Shop</Link></li>
-        <li><Link to="/shop">Cart</Link></li>
+        <li onClick={onLinkClick}><Link to="/cart">Cart</Link></li>
       </ul>
       <button onClick={onMenuButtonClicked}>Menu</button>
     </nav>

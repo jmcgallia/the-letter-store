@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import NavBar from "../NavBar/NavBar"
 import Letter from "../Letter/Letter"
 
-function Shop() {
+function Shop(props) {
+
+ 
 
   // We want the navbar to take space but stay on the top in the shop page
   // But take no space in the homepage
@@ -30,13 +32,15 @@ function Shop() {
 
   },[])
 
+
   let getItems = function() {
 
     let letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     let items = [];
 
     for (let letter of letters) {
-      items.push(<Letter let={letter}/>)
+      items.push(<Letter updateCart={props.updateCart} let={letter}
+      colorOne={props.colorOne} colorTwo={props.colorTwo}/>)
     }
 
     return (
@@ -46,7 +50,7 @@ function Shop() {
     )
   }
 
-  
+
   return (
     
     <div className={shopCSS.shop}>
