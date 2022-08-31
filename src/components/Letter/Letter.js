@@ -5,7 +5,6 @@ import letterCSS from "./Letter.module.css"
 function Letter(props) {
 
   let params = useParams();
-  console.log(params.id)
 
   // This useEffect makes the sizes of all letters in their display boxes
   // Based on the size of that box
