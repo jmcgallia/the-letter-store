@@ -19,6 +19,10 @@ function App() {
     setCart(newCart);
   } 
 
+  useEffect(() => {
+    console.log(cart);
+  },[cart])
+
   
 
 
@@ -29,8 +33,8 @@ function App() {
             <Routes>
               <Route path="/home" element={<Home/>}/>
               <Route path="/shop" element={<Shop updateCart={updateCart}/>}/>
-              <Route path="/cart" element={<Cart cart={cart}/>}/>
-              <Route path="/letter/:id" element={<LetterPage/>}/>
+              <Route path="/cart"  element={<Cart updateCart={updateCart} cart={cart}/>}/>
+              <Route path="/letter/:id"  element={<LetterPage updateCart={updateCart}/>}/>
               <Route path="*" element={<Home/>}/>
             </Routes>
           

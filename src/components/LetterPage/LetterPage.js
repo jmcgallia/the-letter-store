@@ -5,7 +5,7 @@ import LetterCSS from "../Letter/Letter.module.css"
 import NavbarCSS from "../NavBar/NavBar.module.css";
 import Letter from "../Letter/Letter";
 
-function LetterPage() {
+function LetterPage(props) {
   let {id} = useParams();
   let itemInfo = id.split("-");
 
@@ -25,11 +25,12 @@ function LetterPage() {
     handleResize();
     window.addEventListener('resize', handleResize);
 
+  
     // Inject the right colors into the color inputs on this page
     let colorInputs = document.querySelector(`.${LetterCSS.colorInputs}`);
     colorInputs.firstChild.value = `#${itemInfo[1]}`;
     colorInputs.lastChild.value = `#${itemInfo[2]}`;
-
+    
     // Inject those colors into the letter & background
     let letterArea = document.querySelector(`.${LetterCSS.imageArea}`);
     letterArea.style.backgroundColor = `#${itemInfo[1]}`;
@@ -39,7 +40,10 @@ function LetterPage() {
 
   return (
     <div className={LetterPageCSS.letterPage}>
-      <Letter let={itemInfo[0]}/>
+      <Letter let={itemInfo[0]} 
+      colorOne={`#${itemInfo[1]}`} 
+      colorTwo={`#${itemInfo[2]}`}
+      updateCart={props.updateCart}/>
     </div>
   )
 }

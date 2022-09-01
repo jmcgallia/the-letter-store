@@ -7,10 +7,9 @@ function Letter(props) {
   let params = useParams();
   let thisCard = useRef();
 
-  // This useEffect makes the sizes of all letters in their display boxes
-  // Based on the size of that box
-  // And also deals with changing the colors with the inputs
+
   useEffect(() => {
+  
 
     /**** Letter resizing stuff here  ****/
 
@@ -18,7 +17,6 @@ function Letter(props) {
     let imageArea = Array.from(document.querySelectorAll(`.${letterCSS.imageArea}`));
 
     // When page is resize, we get the width from the 1st imageArea
-    // Since they are all the same size.
     // Then for each image area, we give the correct font-size
     let handleResize = function() {
 
@@ -34,21 +32,26 @@ function Letter(props) {
     window.addEventListener('resize', handleResize);
 
 
-    // Set the background & Color of the letter based on props.
+    // Set the background & Color of the input buttons based on props
     let colorInputs = thisCard.current.querySelector(`.${letterCSS.colorInputs}`);
     // Later, if color undefined, we'll put a random color here.
     colorInputs.firstChild.value = props.colorInputOne;
     colorInputs.lastChild.value = props.colorInputTwo;
+    // Set the actual background & letter colors. These are overwritten by the inputs
+    let background = thisCard.current.querySelector(`.${letterCSS.imageArea}`);
+    background.style.backgroundColor = props.colorInputOne;
+    background.style.color = props.colorInputTwo;
+    setBackGroundColor(props.colorInputOne);
+    setLetterColor(props.colorInputTwo);
 
 
   },[])
 
-  
+
 
   let onBackgroundColorChange = function(event) {
     let background = event.target.parentElement.parentElement.parentElement.firstChild;
     background.style.backgroundColor = event.target.value;
-    console.log("this happens")
 
     // Must take the # off the beginning of the color because react router doesn't like it
     setBackGroundColor(backgroundColorRef.current.value.substring(1));
@@ -62,22 +65,25 @@ function Letter(props) {
 
   }
 
+    // When someone hits the 'add to cart' button
+    // Args: letter, quantity, colorOne, colorTwo
+    let addToCart = function(event) {
+      let colorInputs = event.target.parentElement.querySelector(`.${letterCSS.colorInputs}`);
+      let colorInputOne = colorInputs.firstChild.value;
+      let colorInputTwo = colorInputs.lastChild.value
+     
+      // params: letter, quantity, colorOne, colorTwo
+      props.updateCart(props.let, 1, colorInputOne, colorInputTwo);
+  
+    }
+
   const [backgroundColor, setBackGroundColor] = useState();
   const [letterColor, setLetterColor] = useState();
 
   let backgroundColorRef = useRef('aaa');
   let letterColorRef = useRef('aaaaaa');
 
-  // Args: letter, quantity, colorOne, colorTwo
-  let addToCart = function(event) {
-    let colorInputs = event.target.parentElement.querySelector(`.${letterCSS.colorInputs}`);
-    let colorInputOne = colorInputs.firstChild.value;
-    let colorInputTwo = colorInputs.lastChild.value
-   
-    // params: letter, quantity, colorOne, colorTwo
-    props.updateCart(props.let, 1, colorInputOne, colorInputTwo);
 
-  }
 
   return (
     

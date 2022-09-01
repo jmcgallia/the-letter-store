@@ -35,7 +35,11 @@ let Cart = function(props) {
     let cart = []
 
     for (let item of props.cart) {
-      let newLetter = <Letter let={item.letter} colorInputOne={item.colorOne} colorInputTwo={item.colorTwo}/>
+      let newLetter = <Letter let={item.letter} 
+      colorInputOne={item.colorOne} 
+      colorInputTwo={item.colorTwo}
+      updateCart={props.updateCart}/>
+      
       cart.push(newLetter);
     }
 
