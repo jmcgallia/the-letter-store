@@ -51,21 +51,14 @@ let Cart = function(props) {
 
     <div className={CartCSS.cart}>
       <header>
-        <h1>Welcome to your cart!</h1>
-        <p>Click "Make purchase" on the buttom to make your purchase!</p>
+        <h1>Cart</h1>
+        <p>Click "Check Out" on the buttom to make your purchase!</p>
       </header>
       <div className={CartCSS.displayDiv}>
         {renderCart()}
       </div>
-    </div>
-
-/*
-    <div className={CartCSS.cart}>
-      
-      <h1>Cart</h1>
-      {renderCart()}
-    </div>*/
-    
+      <button className={CartCSS.button}>Not implemented</button>
+    </div>    
   )
 }
 

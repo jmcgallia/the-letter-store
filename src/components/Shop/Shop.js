@@ -1,8 +1,9 @@
 import shopCSS from "./Shop.module.css";
 import NavbarCSS from "../NavBar/NavBar.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar"
 import Letter from "../Letter/Letter"
+import LetterCSS from "../Letter/Letter.module.css";
 
 function Shop(props) {
 
@@ -50,13 +51,45 @@ function Shop(props) {
     )
   }
 
+  
+  // Randomize colors of all letters + other things in the document for fun
+  let onColorReset = function() {
+    // All letters
+    let allLetters = Array.from(document.querySelectorAll(`.${LetterCSS.letterCard}`));
+    for (let letter of allLetters) {
+      let background = letter.querySelector(`.${LetterCSS.imageArea}`);
+      let letterTitle = background.nextElementSibling;
+      letterTitle.style.backgroundColor = randomColor();
+      background.style.backgroundColor = randomColor();
+      background.style.color = randomColor();
+    }
+    // The shop
+    let shop = document.querySelector(`.${shopCSS.shop}`);
+    shop.style.backgroundColor = randomColor();
+    shop.style.color = randomColor();
+
+    // The nav
+    let nav = document.querySelector(`.${NavbarCSS.sitenav}`)
+    nav.style.backgroundColor = randomColor();
+    nav.style.color = randomColor();
+  }
+
+    // Get a random hex number
+    let randomHex = function() {
+      return (Math.floor(Math.random() * 256)).toString(16).padStart(2,'0');
+    }
+    // Create a random hex color code
+    let randomColor = function() {
+      return `#${randomHex()}${randomHex()}${randomHex()}`;
+    }
 
   return (
     
     <div className={shopCSS.shop}>
       <header>
-        <h1>Browse our letters!</h1>
-        <p>We know you'll love them.</p>
+        <h1>Browse</h1>
+        <p>You won't be dissapointed.</p>
+        <button className={shopCSS.randomButton} onClick={onColorReset}>Randomize Colors</button>
       </header>
       <div className={shopCSS.displayDiv}>
         {getItems()}
