@@ -37,24 +37,52 @@ function Letter(props) {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-
-    // Set the background & Color of the input buttons based on props
+    
+    // Get the elements whose colors change - inputs, letter, and background
     let colorInputs = thisCard.current.querySelector(`.${letterCSS.colorInputs}`);
-    // Later, if color undefined, we'll put a random color here.
-    colorInputs.firstChild.value = props.colorInputOne;
-    colorInputs.lastChild.value = props.colorInputTwo;
-    // Set the actual background & letter colors. These are overwritten by the inputs
     let background = thisCard.current.querySelector(`.${letterCSS.imageArea}`);
-    background.style.backgroundColor = props.colorInputOne;
-    background.style.color = props.colorInputTwo;
-    setBackGroundColor(props.colorInputOne);
-    setLetterColor(props.colorInputTwo);
 
+    // The colors can be pre-defined by user in props if we are in cart
+    // Else, the will be random
+
+    // For random, where colorInput is undefined
+    if (props.colorInputOne === undefined || props.colorInputTwo === undefined) {
+      if (props.colorInputOne === undefined) {
+        let newColor = randomColor();
+        colorInputs.lastChild.value = newColor;
+        background.style.color = newColor;
+        setLetterColor(newColor);
+      }
+      if (props.colorInputTwo === undefined) {
+        console.log("here");
+        let newColor = randomColor();
+        background.style.backgroundColor = newColor;
+        colorInputs.firstChild.value = newColor;
+        setBackGroundColor(newColor);
+      }
+      // Else use props
+    } else {
+      colorInputs.firstChild.value = props.colorInputOne;
+      colorInputs.lastChild.value = props.colorInputTwo;
+
+      background.style.backgroundColor = props.colorInputOne;
+      background.style.color = props.colorInputTwo;
+      setBackGroundColor(props.colorInputOne);
+      setLetterColor(props.colorInputTwo);
+    }
 
   },[])
 
+  // Get a random hex number
+  let randomHex = function() {
+    return (Math.floor(Math.random() * 256)).toString(16).padStart(2,'0');
+  }
+  // Create a random hex color code
+  let randomColor = function() {
+    return `#${randomHex()}${randomHex()}${randomHex()}`;
+  }
 
-
+  
   let onBackgroundColorChange = function(event) {
     let background = event.target.parentElement.parentElement.parentElement.firstChild;
     background.style.backgroundColor = event.target.value;
@@ -80,7 +108,7 @@ function Letter(props) {
      
       // params: letter, quantity, colorOne, colorTwo
       props.updateCart(props.let, 1, colorInputOne, colorInputTwo, props.buttonType, props.id);
-  
+    
     }
 
   const [backgroundColor, setBackGroundColor] = useState();
