@@ -40,7 +40,7 @@ function Shop(props) {
 
     for (let letter of letters) {
       items.push(<Letter updateCart={props.updateCart} let={letter}
-      colorOne={props.colorOne} colorTwo={props.colorTwo}/>)
+      colorOne={props.colorOne} colorTwo={props.colorTwo} buttonType="add"/>)
     }
 
     return (

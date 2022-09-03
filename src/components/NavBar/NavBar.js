@@ -42,9 +42,7 @@ function NavBar(props) {
   // dropdown menu behave accordingly
   useEffect(() => {
     //console.log(mobile, active, windowSize);
-    console.log(windowSize, window.innerWidth);
     let linkList = document.querySelector(`.${NavBarCSS.sitenav} ul.${NavBarCSS.mobile}`);
-    console.log(linkList);
     let sitenav = document.querySelector(`.${NavBarCSS.sitenav}`);
     
     if (mobile) {

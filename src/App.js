@@ -12,15 +12,24 @@ import Cart from "./components/Cart/Cart";
 function App() {
 
   let [cart, setCart] = useState([]);
+  let [itemID, setItemID] = useState(0);
 
-  let updateCart = function(letter, quantity, colorOne, colorTwo) {
-    let newItem = {letter, quantity, colorOne, colorTwo};
-    let newCart = [...cart, newItem];
-    setCart(newCart);
+  let updateCart = function(letter, quantity, colorOne, colorTwo, operation, id) {
+    if (operation === "add") {
+      let newItem = {letter, quantity, colorOne, colorTwo, itemID};
+      let newCart = [...cart, newItem];
+      setItemID(itemID + 1);
+      setCart(newCart);
+    } else {
+      let newCart = [...cart];
+      newCart.splice(newCart.findIndex(item => item.itemID === id),1);
+      setCart(newCart);
+    }
+
   } 
 
   useEffect(() => {
-    console.log(cart);
+    //console.log(cart);
   },[cart])
 
   

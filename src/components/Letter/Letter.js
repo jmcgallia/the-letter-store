@@ -10,6 +10,12 @@ function Letter(props) {
 
   useEffect(() => {
   
+    // Set whether there will be a + or - button on the letter item
+    if (props.buttonType === "add") {
+      setButtonType("+");
+    } else {
+      setButtonType("-");
+    }
 
     /**** Letter resizing stuff here  ****/
 
@@ -67,18 +73,19 @@ function Letter(props) {
 
     // When someone hits the 'add to cart' button
     // Args: letter, quantity, colorOne, colorTwo
-    let addToCart = function(event) {
+    let onButtonClick = function(event) {
       let colorInputs = event.target.parentElement.querySelector(`.${letterCSS.colorInputs}`);
       let colorInputOne = colorInputs.firstChild.value;
       let colorInputTwo = colorInputs.lastChild.value
      
       // params: letter, quantity, colorOne, colorTwo
-      props.updateCart(props.let, 1, colorInputOne, colorInputTwo);
+      props.updateCart(props.let, 1, colorInputOne, colorInputTwo, props.buttonType, props.id);
   
     }
 
   const [backgroundColor, setBackGroundColor] = useState();
   const [letterColor, setLetterColor] = useState();
+  const [buttonType, setButtonType] = useState();
 
   let backgroundColorRef = useRef('aaa');
   let letterColorRef = useRef('aaaaaa');
@@ -100,7 +107,7 @@ function Letter(props) {
               <input type="color" onChange={onBackgroundColorChange} ref={backgroundColorRef}></input>
               <input type="color" onChange={onLetterColorChange} ref={letterColorRef}></input>
             </div>
-            <button onClick={addToCart}>+</button>
+            <button onClick={onButtonClick}>{buttonType}</button>
           </div>
         </div>
       </div>

@@ -43,7 +43,8 @@ function LetterPage(props) {
       <Letter let={itemInfo[0]} 
       colorOne={`#${itemInfo[1]}`} 
       colorTwo={`#${itemInfo[2]}`}
-      updateCart={props.updateCart}/>
+      updateCart={props.updateCart}
+      buttonType="add"/>
     </div>
   )
 }
