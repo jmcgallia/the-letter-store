@@ -3,6 +3,14 @@
   position: relative;
   padding-top: 100%;
   overflow: hidden;
+  transition-duration: 350ms;
+  box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+  transition-property: transform z-index;
+}
+
+.letterCard:hover {
+  z-index: 1;
+  transform: scale(1.1);
 }
 
 .letterCard .letterContent {

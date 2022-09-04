@@ -3,6 +3,7 @@ import Home from "../Home/Home";
 import Shop from "../Shop/Shop"
 import {Link} from "react-router-dom"
 import { useEffect, useState } from "react";
+import menuImage from "./media/menu.png";
 
 
 function NavBar(props) {
@@ -36,6 +37,8 @@ function NavBar(props) {
     } else {
       setActive(true);
     }
+
+
   }
 
   // When either the mobile or active states are changed, make the 
@@ -58,6 +61,15 @@ function NavBar(props) {
 
     }
 
+    // Make the nav toggle button rotate - state
+    let navToggle = document.querySelector(`.${NavBarCSS.navToggle}`)
+    console.log(navToggle);
+    if (active === false) {
+      navToggle.classList.remove(`${NavBarCSS.shown}`);
+    } else {
+      navToggle.classList.add(`${NavBarCSS.shown}`);
+    }
+
   },[active, mobile, windowSize])
 
   let onLinkClick = function() {
@@ -74,11 +86,11 @@ function NavBar(props) {
         <li onClick={onLinkClick}><Link to="/cart">Cart</Link></li>
       </ul>
       <ul className={NavBarCSS.mobile}>
-        <li onClick={onLinkClick}><Link to="/home">Home</Link></li>
-        <li onClick={onLinkClick}><Link to="/shop">Shop</Link></li>
-        <li onClick={onLinkClick}><Link to="/cart">Cart</Link></li>
+      <Link onClick={onLinkClick} to="/home"><li >Home</li></Link>
+      <Link onClick={onLinkClick} to="/shop"><li>Shop</li></Link>
+      <Link onClick={onLinkClick} to="/cart"><li >Cart</li></Link>
       </ul>
-      <button onClick={onMenuButtonClicked}>Menu</button>
+      <img src={menuImage} className={NavBarCSS.navToggle} onClick={onMenuButtonClicked}/>
     </nav>
     </>
 

@@ -1,6 +1,6 @@
 .sitenav {
   position: fixed;
-  background-color: aliceblue;
+  background-color: rgb(188, 81, 134);
   width: 100%;
   min-height: 7vh;
   opacity: .95;
@@ -9,7 +9,7 @@
   grid-template-columns: 3fr 1fr;
   align-items: center;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -36,8 +36,9 @@
   list-style: none;
 }
 
-.sitenav button {
+.sitenav img {
   display: none;
+
 }
 
 
@@ -62,10 +63,33 @@
     transition-duration: .2s;
     z-index: -1;
 
+    border-bottom: 1px solid black;
+
     grid-template-columns: 1fr;
     grid-template-rows: 6vh 6vh 6vh;
-    background-color: aqua;
-    
+    align-content: center;
+    background-color: aliceblue;
+  }
+
+  .sitenav ul.mobile a {
+    border-bottom: 1px solid black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    pointer-events: auto;
+    text-decoration: none;
+
+    transition: background-color scale 350ms linear;
+  }
+
+  .sitenav ul.mobile a:hover {
+    transform: scale(1.1);
+    background-color: rgb(77, 192, 73);
+
+  }
+
+  .sitenav ul.mobile a:first-child {
+    border-top: 1px solid black;
   }
 
   .sitenav ul.browser {
@@ -74,9 +98,14 @@
 
 
 
-  .sitenav button {
+  .sitenav .navToggle {
     display: block;
     grid-column: 3 / 4;
+    transition: transform 200ms linear;
+  }
+
+  .sitenav .navToggle.shown {
+    transform: rotate(-90deg);
   }
 
 
