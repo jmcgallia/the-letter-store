@@ -9,6 +9,11 @@ function Home() {
   useEffect(() => {
     let navBar = document.querySelector(`.${NavbarCSS.sitenav}`);
     navBar.style.position = "fixed";
+
+    // From CSS-tricks. Set the height of our grid rows based on the
+    // Height here so that the mobile search bar doesn't ruin height 
+    let windowHeight = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
   },[])
 
   return (

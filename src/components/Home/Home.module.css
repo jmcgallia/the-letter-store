@@ -5,8 +5,9 @@
 .home {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100vh 100vh 100vh 100vh;
+  grid-template-rows: repeat(4,calc(var(--vh, 1vh) * 100));
 }
+
 
 .page {
   height: 100vh;

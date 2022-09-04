@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/the-letter-store/static/css/main.94755d64.css",
-    "main.js": "/the-letter-store/static/js/main.caf367f9.js",
+    "main.css": "/the-letter-store/static/css/main.3904d953.css",
+    "main.js": "/the-letter-store/static/js/main.930dfcc3.js",
     "static/media/phonegirl2.jpg": "/the-letter-store/static/media/phonegirl2.710d0a48f112645f369e.jpg",
     "static/media/phonegirl.jpg": "/the-letter-store/static/media/phonegirl.cbace549ebec392a2efb.jpg",
     "index.html": "/the-letter-store/index.html",
-    "main.94755d64.css.map": "/the-letter-store/static/css/main.94755d64.css.map",
-    "main.caf367f9.js.map": "/the-letter-store/static/js/main.caf367f9.js.map"
+    "main.3904d953.css.map": "/the-letter-store/static/css/main.3904d953.css.map",
+    "main.930dfcc3.js.map": "/the-letter-store/static/js/main.930dfcc3.js.map"
   },
   "entrypoints": [
-    "static/css/main.94755d64.css",
-    "static/js/main.caf367f9.js"
+    "static/css/main.3904d953.css",
+    "static/js/main.930dfcc3.js"
   ]
 }
