@@ -8,39 +8,32 @@ function Home() {
   // We want the navbar static in the shop but fixed on the homepage
   useEffect(() => {
     let navBar = document.querySelector(`.${NavbarCSS.sitenav}`);
-    navBar.style.position = "fixed";
+    navBar.style.position = "static";
 
 
   },[])
 
   return (
    
-    <div className={HomeCSS.home}>
-      <div className={`${HomeCSS.page} ${HomeCSS.page1}`}>
-        <div className={HomeCSS.content}>
-          <h1>Send an unforgettable letter.</h1>
-          <p>
-            With the click of a button, you can send anyone in the world their favorite letter.
-          </p>
-          <div className={HomeCSS.preview}><div></div></div>
-         
-          <button>Make someone's day!</button>
-          
-          
-        
+    <div className={HomeCSS.container}>
+      <div className={HomeCSS.home}>
+        <div className={`${HomeCSS.area} ${HomeCSS.areaOne}`}>
+          <div className={`${HomeCSS.content}`}>
+            <h1>Hello!</h1>
+          </div>
         </div>
-      </div>
-      <div className={`${HomeCSS.page} ${HomeCSS.page2}`}>
-        <h1>This is page 2</h1>
-      </div>
-      <div className={`${HomeCSS.page} ${HomeCSS.page3}`}>
-        <h1>This is page 3</h1>
-      </div>
-      <div className={`${HomeCSS.page} ${HomeCSS.page4}`}>
-        <h1>This is page 4</h1>
+        <div className={`${HomeCSS.area} ${HomeCSS.areaTwo}`}>
+          
+        </div>
+        <div className={`${HomeCSS.area} ${HomeCSS.areaThree}`}>
+          
+        </div>
+        <div className={`${HomeCSS.area} ${HomeCSS.areaFour}`}>
+          
+        </div>
+
       </div>
     </div>
-  
   )
 }
 
