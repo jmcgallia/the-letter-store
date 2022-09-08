@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/the-letter-store/static/css/main.2a263c2e.css",
-    "main.js": "/the-letter-store/static/js/main.cd2066e6.js",
+    "main.css": "/the-letter-store/static/css/main.8bbad6e0.css",
+    "main.js": "/the-letter-store/static/js/main.b753e7a4.js",
+    "static/media/tiles.jpg": "/the-letter-store/static/media/tiles.e7c4b8a78ac36420df95.jpg",
     "index.html": "/the-letter-store/index.html",
-    "main.2a263c2e.css.map": "/the-letter-store/static/css/main.2a263c2e.css.map",
-    "main.cd2066e6.js.map": "/the-letter-store/static/js/main.cd2066e6.js.map"
+    "main.8bbad6e0.css.map": "/the-letter-store/static/css/main.8bbad6e0.css.map",
+    "main.b753e7a4.js.map": "/the-letter-store/static/js/main.b753e7a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a263c2e.css",
-    "static/js/main.cd2066e6.js"
+    "static/css/main.8bbad6e0.css",
+    "static/js/main.b753e7a4.js"
   ]
 }

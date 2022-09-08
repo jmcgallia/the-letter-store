@@ -2,6 +2,7 @@ import HomeCSS from "./Home.module.css";
 import NavbarCSS from "../NavBar/NavBar.module.css";
 import Letter from "../Letter/Letter";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 function Home(props) {
@@ -26,12 +27,44 @@ function Home(props) {
         <p>Our customizable lettered tiles will help you
           bring a new meaning to your project.
         </p>
+        <Link to="/shop">
         <button>BROWSE</button>
+        </Link>
       </div>
 
       <div className={HomeCSS.letterSlider}>
             <div>
-              <Letter updateCart={props.updateCart} let={"A"}
+              <Letter updateCart={props.updateCart} let={"H"}
+              colorOne={props.colorOne}
+              colorTwo={props.colorTwo} 
+              buttonType="add"/>
+            </div>
+            <div>
+              <Letter updateCart={props.updateCart} let={"O"}
+              colorOne={props.colorOne}
+              colorTwo={props.colorTwo} 
+              buttonType="add"/>
+            </div>
+            <div>
+              <Letter updateCart={props.updateCart} let={"W"}
+              colorOne={props.colorOne}
+              colorTwo={props.colorTwo} 
+              buttonType="add"/>
+            </div>
+            <div>
+              <Letter updateCart={props.updateCart} let={"D"}
+              colorOne={props.colorOne}
+              colorTwo={props.colorTwo} 
+              buttonType="add"/>
+            </div>
+            <div>
+              <Letter updateCart={props.updateCart} let={"Y"}
+              colorOne={props.colorOne}
+              colorTwo={props.colorTwo} 
+              buttonType="add"/>
+            </div>
+            <div>
+              <Letter updateCart={props.updateCart} let={"P"}
               colorOne={props.colorOne}
               colorTwo={props.colorTwo} 
               buttonType="add"/>
@@ -43,37 +76,31 @@ function Home(props) {
               buttonType="add"/>
             </div>
             <div>
-              <Letter updateCart={props.updateCart} let={"A"}
+              <Letter updateCart={props.updateCart} let={"R"}
               colorOne={props.colorOne}
               colorTwo={props.colorTwo} 
               buttonType="add"/>
             </div>
             <div>
-              <Letter updateCart={props.updateCart} let={"A"}
+              <Letter updateCart={props.updateCart} let={"T"}
               colorOne={props.colorOne}
               colorTwo={props.colorTwo} 
               buttonType="add"/>
             </div>
             <div>
-              <Letter updateCart={props.updateCart} let={"A"}
+              <Letter updateCart={props.updateCart} let={"N"}
               colorOne={props.colorOne}
               colorTwo={props.colorTwo} 
               buttonType="add"/>
             </div>
             <div>
-              <Letter updateCart={props.updateCart} let={"A"}
+              <Letter updateCart={props.updateCart} let={"E"}
               colorOne={props.colorOne}
               colorTwo={props.colorTwo} 
               buttonType="add"/>
             </div>
             <div>
-              <Letter updateCart={props.updateCart} let={"A"}
-              colorOne={props.colorOne}
-              colorTwo={props.colorTwo} 
-              buttonType="add"/>
-            </div>
-            <div>
-              <Letter updateCart={props.updateCart} let={"A"}
+              <Letter updateCart={props.updateCart} let={"R"}
               colorOne={props.colorOne}
               colorTwo={props.colorTwo} 
               buttonType="add"/>
