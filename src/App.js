@@ -33,14 +33,14 @@ function App() {
   },[cart])
 
   
-
+  console.log("App");
 
   return (
     <HashRouter basename="/">
         <NavBar/>
           
             <Routes>
-              <Route path="/home" element={<Home/>}/>
+              <Route path="/home" element={<Home updateCart={updateCart}/>}/>
               <Route path="/shop" element={<Shop updateCart={updateCart}/>}/>
               <Route path="/cart"  element={<Cart updateCart={updateCart} cart={cart}/>}/>
               <Route path="/letter/:id"  element={<LetterPage updateCart={updateCart}/>}/>

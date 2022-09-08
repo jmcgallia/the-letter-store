@@ -2,6 +2,8 @@
   position: fixed;
   background-color: rgb(188, 81, 134);
   width: 100%;
+  max-width: 1800px;
+  margin: auto;
   min-height: 7vh;
   opacity: .95;
 
@@ -61,7 +63,7 @@
     left: 0px;
 
     transition-duration: .2s;
-    z-index: -1;
+    z-index: 3;
 
     border-bottom: 1px solid black;
 

@@ -7,7 +7,7 @@ function Letter(props) {
   let params = useParams();
   let thisCard = useRef();
 
-
+  console.log("Letter")
   useEffect(() => {
   
     // Set whether there will be a + or - button on the letter item

@@ -63,7 +63,6 @@ function NavBar(props) {
 
     // Make the nav toggle button rotate - state
     let navToggle = document.querySelector(`.${NavBarCSS.navToggle}`)
-    console.log(navToggle);
     if (active === false) {
       navToggle.classList.remove(`${NavBarCSS.shown}`);
     } else {
