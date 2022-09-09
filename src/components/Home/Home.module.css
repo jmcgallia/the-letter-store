@@ -31,7 +31,7 @@
   display: none;
 }*/
 
-.letterSlider div {
+.letterSlider > div {
   width: 300px;
   
 }
@@ -48,7 +48,7 @@
   height: 300px;
   z-index: 2;
 
-  background-color: aliceblue;
+  background-color: rgb(118, 166, 255);
   opacity: .8;
   box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
 
@@ -65,9 +65,9 @@
 
 
 .intro button {
-  height: 50%;
-  width: 50%;
-  justify-self: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 86, 190, 1);
 
   transition-duration: 350ms;
   box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
@@ -76,6 +76,11 @@
 
 .intro button:hover {
   transform: scale(1.1);
+}
+
+.intro a {
+  justify-self: center;
+  width: 70%;
 }
 
 
@@ -102,7 +107,7 @@
     font-size: 40px;
   }
 
-  .letterSlider div {
+  .letterSlider > div {
     width: 450px;
   }
 }
@@ -125,7 +130,7 @@
     font-size: 24px;
   }
 
-  .letterSlider div {
+  .letterSlider > div {
     width: 350px;
   }
 }
@@ -137,7 +142,7 @@
     left: 30%;
   }
 
-  .letterSlider div {
+  .letterSlider > div {
     width: 300px;
   }
 }
@@ -149,16 +154,16 @@
     width: 90vw;
     left: 50%;
     top: 40%;
-    height: 30vh;
+    height: min-content;
     transform: translate(-50%,-50%);
   }
 
   .intro p {
-    font-size: 16px;
+    font-size: 26px;
   }
 
   .intro h1 {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .intro button {
@@ -170,16 +175,23 @@
   .letterSlider {
     justify-items: center;
     grid-template-columns: 100%;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
   }
 
-  .letterSlider div {
+  .letterSlider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .letterSlider > div {
     width: 300px;
+
   }
+
+
+
+
 }
-
-
-
-
 
 
 

@@ -7,7 +7,7 @@ function Letter(props) {
   let params = useParams();
   let thisCard = useRef();
 
-  console.log("Letter")
+
   useEffect(() => {
   
     // Set whether there will be a + or - button on the letter item
@@ -54,7 +54,6 @@ function Letter(props) {
         setLetterColor(newColor);
       }
       if (props.colorInputTwo === undefined) {
-        console.log("here");
         let newColor = randomColor();
         background.style.backgroundColor = newColor;
         colorInputs.firstChild.value = newColor;
@@ -62,6 +61,7 @@ function Letter(props) {
       }
       // Else use props
     } else {
+      console.log("colorOne", props.colorInputOne);
       colorInputs.firstChild.value = props.colorInputOne;
       colorInputs.lastChild.value = props.colorInputTwo;
 
@@ -107,6 +107,7 @@ function Letter(props) {
       let colorInputTwo = colorInputs.lastChild.value
      
       // params: letter, quantity, colorOne, colorTwo
+
       props.updateCart(props.let, 1, colorInputOne, colorInputTwo, props.buttonType, props.id);
     
     }

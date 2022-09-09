@@ -31,21 +31,26 @@ let Cart = function(props) {
   },[])
 
   let renderCart = function() {
-    
     let cart = []
+    console.log(props.cart);
     for (let item of props.cart) {
+      console.log(item)
       let newLetter = <Letter let={item.letter} 
       colorInputOne={item.colorOne} 
       colorInputTwo={item.colorTwo}
       updateCart={props.updateCart}
       buttonType="remove"
-      id={item.itemID}/>
+      id={item.itemID}
+      key={item.itemID}/>
       cart.push(newLetter);
+      
     }
-
+    
     return cart;
 
   }
+
+  console.log("hello");
 
   return (
 

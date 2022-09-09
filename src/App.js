@@ -22,6 +22,7 @@ function App() {
       setCart(newCart);
     } else {
       let newCart = [...cart];
+      console.log(newCart.findIndex(item => item.itemID === id));
       newCart.splice(newCart.findIndex(item => item.itemID === id),1);
       setCart(newCart);
     }
@@ -29,11 +30,10 @@ function App() {
   } 
 
   useEffect(() => {
-    //console.log(cart);
+    console.log(cart);
   },[cart])
 
   
-  console.log("App");
 
   return (
     <HashRouter basename="/">

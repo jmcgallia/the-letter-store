@@ -39,9 +39,12 @@ function Shop(props) {
     let letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     let items = [];
 
+    let keyCounter = 1000;
     for (let letter of letters) {
       items.push(<Letter updateCart={props.updateCart} let={letter}
-      colorOne={props.colorOne} colorTwo={props.colorTwo} buttonType="add"/>)
+      colorOne={props.colorOne} colorTwo={props.colorTwo} buttonType="add"
+      key={keyCounter}/>)
+      keyCounter++;
     }
 
     return (
