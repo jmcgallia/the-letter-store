@@ -4,7 +4,7 @@ A webpage where users can customize different tiles that they'd like to buy and 
 
 ## Live Link
 
-[Live link to the project] (https://jordan-mcgalliard.github.io/the-letter-store/)
+[Live link to the project](https://jordan-mcgalliard.github.io/the-letter-store/)
 
 ## Why I made this project
 
@@ -12,6 +12,14 @@ A webpage where users can customize different tiles that they'd like to buy and 
 - Make a responsive website that works well on desktop/mobile and scales well (within reason.)
 - User React-Router in a real project
 - Use CSS modules for the first time
+
+## Technologies Used
+- React
+- React Router
+- JavaScript, CSS, HTML
+- React-create-app stack by Facebook
+- Git, GitHub
+- Linux Command Line Interface
 
 ## What I learned making this project
 
@@ -32,6 +40,7 @@ A webpage where users can customize different tiles that they'd like to buy and 
 ![The Home Menu - Desktop](./demo-images/home-desktop.png)
 ![The Home Menu - Desktop](./demo-images/shop-desktop.png)
 ![The Home Menu - Desktop](./demo-images/cart-desktop.png)
+![The Home Menu - Desktop](./demo-images/shop-medium.png)
 ![The Home Menu - Desktop](./demo-images/home-mobile.png)
 ![The Home Menu - Desktop](./demo-images/home-menu-mobile.png)
 ![The Home Menu - Desktop](./demo-images/shop-mobile.png)
